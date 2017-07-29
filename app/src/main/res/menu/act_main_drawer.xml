@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_volume"
+            android:icon="@drawable/ic_opacity_black_24dp"
+            android:title="Volume" />
+        <item
+            android:id="@+id/nav_consumo"
+            android:icon="@drawable/ic_trending_up_black_24dp"
+            android:title="Consumo" />
+        <item
+            android:id="@+id/nav_perfil"
+            android:icon="@drawable/ic_face_black_24dp"
+            android:title="Perfil" />
+        <item
+            android:id="@+id/nav_manual"
+            android:icon="@drawable/ic_description_black_24dp"
+            android:title="Manual" />
+        <item
+            android:id="@+id/nav_config"
+            android:icon="@drawable/ic_settings_black_24dp"
+            android:title="Configurações" />
+        <item
+            android:id="@+id/nav_feedback"
+            android:icon="@drawable/ic_feedback_black_24dp"
+            android:title="Feedback" />
+        <item
+            android:id="@+id/nav_sobre"
+            android:icon="@drawable/ic_info_black_24dp"
+            android:title="Sobre" />
+    </group>
+</menu>
