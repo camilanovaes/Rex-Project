@@ -12,5 +12,6 @@
     <string name="edt_email">Email</string>
     <string name="edt_senha">Senha</string>
     <string name="edt_numSerie">Número de Série</string>
+    <string name="btn_sair">Sair</string>
 
 </resources>
