@@ -72,8 +72,10 @@ public class actMain extends AppCompatActivity
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
+        if (id == R.id.btn_sair) {
+            /*SAIR DA CONTA E IR PARA A PÁG DE LOGIN*/
+            Intent it = new Intent(getApplicationContext(), actLogin.class);
+            startActivity(it);
         }
 
         return super.onOptionsItemSelected(item);
