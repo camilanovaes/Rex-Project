@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.rex.rex_project_v03.frgSobre">
+
+    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="@color/blue_light"
+        android:fitsSystemWindows="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingLeft="24dp"
+            android:paddingRight="24dp"
+            android:paddingTop="56dp">
+
+
+            <ImageView android:src="@mipmap/icon_rex"
+                android:layout_width="wrap_content"
+                android:layout_height="104dp"
+                android:layout_marginBottom="24dp"
+                android:layout_gravity="center_horizontal" />
+
+            <!-- Email Label -->
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:layout_marginTop="8dp">
+
+            </android.support.design.widget.TextInputLayout>
+
+            <!-- Desenvolvedores Label -->
+            <TextView
+                android:id="@+id/desenvolvedores"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:paddingBottom="25dp"
+                android:text="Desenvolvedores:"
+                android:textColor="@color/write"
+                android:textSize="24sp" />
+
+            <TextView
+                android:id="@+id/camila"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:paddingBottom="20dp"
+                android:paddingLeft="20dp"
+                android:text="Camila Novaes Silva"
+                android:textColor="@color/write"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/eduardo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:paddingBottom="20dp"
+                android:paddingLeft="20dp"
+                android:text="Eduardo Renan Rocha de Oliveira"
+                android:textColor="@color/write"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/gustavo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:paddingBottom="20dp"
+                android:paddingLeft="20dp"
+                android:text="Gustavo Moraes Vasconcelos"
+                android:textColor="@color/write"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/lennon"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:paddingBottom="20dp"
+                android:paddingLeft="20dp"
+                android:text="Lennon Roberto Almeida Ribeiro"
+                android:textColor="@color/write"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/lucas"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:paddingBottom="20dp"
+                android:paddingLeft="20dp"
+                android:text="Lucas Borges de Oliveira"
+                android:textColor="@color/write"
+                android:textSize="18sp" />
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:layout_marginTop="8dp">
+
+            </android.support.design.widget.TextInputLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+</RelativeLayout>

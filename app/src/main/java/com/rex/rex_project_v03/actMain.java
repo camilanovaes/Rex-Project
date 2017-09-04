@@ -1,10 +1,10 @@
 package com.rex.rex_project_v03;
 
-import android.content.Intent;
+import android.content.Context;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
-import android.view.View;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
@@ -13,6 +13,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
+import android.widget.Toast;
 
 public class actMain extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -24,15 +27,6 @@ public class actMain extends AppCompatActivity
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
-
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
@@ -42,9 +36,13 @@ public class actMain extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
-        //Primeira ação: Chamar a Tela de Login
-        Intent it = new Intent(getApplicationContext(), actLogin.class);
-        startActivity(it);
+        if (savedInstanceState == null) {
+            //Adicionar o fragmento inicial
+            getSupportFragmentManager()
+                    .beginTransaction()
+                    .add(R.id.frgContainer, new frgVolume())
+                    .commit();
+        }
     }
 
     @Override
@@ -74,8 +72,12 @@ public class actMain extends AppCompatActivity
         //noinspection SimplifiableIfStatement
         if (id == R.id.btn_sair) {
             /*SAIR DA CONTA E IR PARA A PÁG DE LOGIN*/
-            Intent it = new Intent(getApplicationContext(), actLogin.class);
-            startActivity(it);
+            setContentView(R.layout.frg_slashcontainer);
+            Fragment nf = new frgLogin();
+            FragmentManager fragmentManager = getSupportFragmentManager();
+            fragmentManager
+                    .beginTransaction()
+                    .replace(R.id.fragContainerTest, nf).commit();
         }
 
         return super.onOptionsItemSelected(item);
@@ -85,22 +87,59 @@ public class actMain extends AppCompatActivity
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
         // Handle navigation view item clicks here.
+        FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+
         int id = item.getItemId();
 
         if (id == R.id.nav_volume) {
-            // Handle the camera action
+            getSupportFragmentManager()
+                    .beginTransaction()
+                    .replace(R.id.frgContainer, new frgVolume())
+                    .commit();
+
         } else if (id == R.id.nav_consumo) {
+            Context context = getApplicationContext();
+            CharSequence text = "Em breve!";
+            int duration = Toast.LENGTH_SHORT;
+
+            Toast toast = Toast.makeText(context, text, duration);
+            toast.show();
 
         } else if (id == R.id.nav_perfil) {
+            getSupportFragmentManager()
+                    .beginTransaction()
+                    .replace(R.id.frgContainer, new frgPerfil())
+                    .commit();
 
         } else if (id == R.id.nav_manual) {
+            Context context4 = getApplicationContext();
+            CharSequence text = "Utilize a tag NFC para acessar o manual! Atualizações em breve!";
+            int duration = Toast.LENGTH_LONG;
+
+            Toast toast = Toast.makeText(context4, text, duration);
+            toast.show();
 
         } else if (id == R.id.nav_config) {
+            Context context3 = getApplicationContext();
+            CharSequence text = "Em breve!";
+            int duration = Toast.LENGTH_SHORT;
+
+            Toast toast = Toast.makeText(context3, text, duration);
+            toast.show();
 
         } else if (id == R.id.nav_feedback) {
+            Context context4 = getApplicationContext();
+            CharSequence text = "Em breve!";
+            int duration = Toast.LENGTH_SHORT;
+
+            Toast toast = Toast.makeText(context4, text, duration);
+            toast.show();
 
         } else if (id == R.id.nav_sobre) {
-
+            getSupportFragmentManager()
+                    .beginTransaction()
+                    .replace(R.id.frgContainer, new frgSobre())
+                    .commit();
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
